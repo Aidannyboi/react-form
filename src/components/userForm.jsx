@@ -7,6 +7,16 @@ const UserForm = () => {
     const [conPass, setConPass] = useState('');
     const [hasBeenSubmitted, setHasBeenSubmitted] = useState(false);
 
+    const [firstError, setfirstError] = useState("Must be at least 2 character");
+
+    const [lastError, setLastError] = useState("Must be at least 2 character");
+
+    const [emailError, setEmailError] = useState("Must be at least 2 character");
+
+    const [passError, setPassError] = useState("Must be at least 2 character");
+
+    const [conPassError, setConPassError] = useState("Must be at least 2 character");
+
 
 const createUser = (e) => {
     e.preventDefault();
@@ -28,6 +38,9 @@ const createUser = (e) => {
     console.log("Created", newUser)
 
     setHasBeenSubmitted(true);
+}
+
+const handleInput = (e) => {
 }
 
 return (
