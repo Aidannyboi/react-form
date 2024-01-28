@@ -17,6 +17,7 @@ const UserForm = () => {
 
     const [conPassError, setConPassError] = useState("");
 
+    const [userList, setUserList] = useState([])
 
 const createUser = (e) => {
     e.preventDefault();
@@ -28,6 +29,8 @@ const createUser = (e) => {
         pass: pass,
         conPass: conPass
     };
+
+    setUserList([...userList, newUser])
 
     setConPass("")
     setPass("")
@@ -143,6 +146,14 @@ return (
             </div>
 
             <input type="submit" value="Create User" className="userSubmit"/>
+        </div>
+
+        <div>
+            <h2> Users:</h2>
+            {
+                userList.map((user,idx) => 
+                <p key={idx}> {user.firstName} {user.lastName} ({user.email})</p>)
+            }
         </div>
     </form>
 )
